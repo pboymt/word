@@ -1,0 +1,67 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    .word {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .origin {
+            display: flex;
+            flex: none;
+            height: 70%;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .translation {
+            display: flex;
+            height: 30%;
+            flex: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .meaning {
+                display: flex;
+                font-size: 1.25rem;
+                align-items: center;
+                padding: 0 0.5rem;
+                .part {
+                    padding: 0 0.5rem;
+                    background-color: #ccc;
+                }
+                .means {
+                    padding: 0 0.5rem;
+                }
+            }
+            .parts {
+                display: flex;
+                flex-direction: row;
+                margin-top: 1rem;
+                .part {
+                    width: 0.4rem;
+                    height: 0.2rem;
+                    background-color: rgba($color: #000000, $alpha: 0.3);
+                    margin: 0.2rem;
+                    &.selected {
+                        background-color: rgba($color: #000000, $alpha: 0.7);
+                    }
+                }
+            }
+        }
+    }
+    .control {
+        height: 3rem;
+        flex: none;
+        display: flex;
+        .button {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

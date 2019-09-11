@@ -1,0 +1,45 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    .add {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        input {
+            margin: 0.25rem;
+            display: block;
+            border: 1px solid #ccc;
+            line-height: 2rem;
+            font-size: 1.25rem;
+            padding: 0 0.25rem;
+            &.ng-valid {
+                border-color: green;
+            }
+            &.ng-invalid {
+                border-color: red;
+            }
+        }
+        button {
+            margin: 0.25rem;
+            display: block;
+            line-height: 2rem;
+            font-size: 1.25rem;
+            border: none;
+            border-radius: 0.1rem;
+            color: #fff;
+            background-color: green;
+            &:disabled {
+                background-color: #ccc;
+            }
+        }
+        .result {
+            margin: 0.5rem;
+            line-height: 1.5rem;
+            font-size: 1.25rem;
+        }
+    }
+}

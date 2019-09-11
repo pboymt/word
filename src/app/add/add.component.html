@@ -1,0 +1,5 @@
+<form class="add" (submit)="submitWord()" [formGroup]="form">
+    <input type="text" formControlName="word" (change)="result=''">
+    <button type="submit" [disabled]="form.invalid || uploading">添加</button>
+    <div class="result">结果：{{result}}</div>
+</form>

@@ -1,0 +1,23 @@
+<form class="configs" (submit)="saveConfig()" [formGroup]="configs">
+    <div class="config">
+        <label class="key">令牌</label>
+        <div class="value">
+            <input type="text" name="authKey" formControlName="authKey" placeholder="请输入令牌">
+        </div>
+    </div>
+    <div class="config">
+        <label class="key">等级</label>
+        <div readonly step="1" min="0" class="value level">{{configs.controls['level'].value}}</div>
+        <button type="button" (click)="changeLevel(-1)">-</button>
+        <button type="button" (click)="changeLevel(1)">+</button>
+    </div>
+    <div class="config">
+        <label class="key">主题</label>
+        <select class="value" name="theme" formControlName="theme" placeholder="请输入令牌">
+            <option *ngFor="let t of theme.availableTheme" [value]="t">{{t}}</option>
+        </select>
+    </div>
+    <div class="config">
+        <button type="submit" [disabled]="!configs.valid">保存</button>
+    </div>
+</form>

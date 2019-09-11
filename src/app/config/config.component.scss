@@ -1,0 +1,75 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    .configs {
+        flex: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .config {
+            display: flex;
+            height: 2rem;
+            flex-direction: row;
+            border-bottom: 1px solid #aaa;
+            overflow: hidden;
+            .key {
+                display: block;
+                flex: none;
+                // padding: 0.25rem 0;
+                text-align: center;
+                width: 4rem;
+                line-height: 2rem;
+                font-size: 1.25rem;
+                white-space: nowrap;
+            }
+            // input.value {
+            //     padding: 0.25rem 0;
+            //     text-indent: 0.25rem;
+            // }
+            .value {
+                flex: 1 1 0;
+                display: flex;
+                font-size: 1.25rem;
+                line-height: 2rem;
+                border: none;
+                border-left: 1px solid #aaa;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                input {
+                    display: block;
+                    flex: 1;
+                    border: none;
+                    font-size: 1.1rem;
+                    padding: 0 0.25rem;
+                }
+                &.level {
+                    padding: 0 0.25rem;
+                }
+                &.ng-invalid {
+                    background-color: rgba($color: #ff0000, $alpha: 0.1);
+                }
+            }
+            button {
+                padding: 0.25rem;
+                flex: none;
+                display: block;
+                border: none;
+                background-color: rgba(#888, 0.1);
+                font-size: 1.25rem;
+                width: 2.5rem;
+                border-left: #aaa dotted 1px;
+                &[type="submit"] {
+                    flex: 1;
+                    color: #fff;
+                    background-color: rgb(0, 190, 0);
+                    &:disabled {
+                        background-color: rgba(#666, 1);
+                    }
+                }
+            }
+        }
+    }
+}

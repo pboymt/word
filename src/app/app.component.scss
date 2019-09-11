@@ -1,0 +1,50 @@
+.window {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    // background-color: #fff;
+    .navbar {
+        flex: none;
+        display: flex;
+        height: 3rem;
+        background-color: gainsboro;
+        .tab {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.active {
+                background-color: #fff;
+            }
+        }
+        &.handset {
+            z-index: 9999;
+            position: fixed;
+            background-color: rgba(255, 255, 255, 0);
+            right: 0;
+            bottom: 0;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            .tab {
+                flex: none;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 0.75rem;
+                margin: 0.5rem 0.25rem;
+                border: 1px solid rgba($color: #000000, $alpha: 0.3);
+                opacity: 0.3;
+                &.active {
+                    opacity: 0.5;
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+    .content {
+        display: flex;
+        flex: 1;
+        background-color: #fff;
+    }
+}

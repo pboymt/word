@@ -3,15 +3,24 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
+  "author": {
+    "name": "pboymt",
+    "url": "https://github.com/pboymt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pboymt/word.git"
+  },
   "dependencies": {
     "@angular/animations": "~8.2.0",
+    "@angular/cdk": "^8.1.4",
     "@angular/common": "~8.2.0",
     "@angular/compiler": "~8.2.0",
     "@angular/core": "~8.2.0",
@@ -19,6 +28,7 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

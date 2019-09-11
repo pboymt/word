@@ -1,0 +1,21 @@
+<div class="word" (swipeleft)="next($event)" (swiperight)="prev($event)">
+    <div class="origin" #origin>
+        <div class="container" #container [style.transform]="'scale('+scale+')'">
+            {{current.word_name}}
+        </div>
+    </div>
+    <div class="translation" (click)="changePart()">
+        <div class="meaning">
+            <div class="part">{{current.symbols[0].parts[part].part}}</div>
+            <div class="means">{{current.symbols[0].parts[part].means.join(', ')}}</div>
+        </div>
+        <div class="parts">
+            <div class="part" [class.selected]="i===part" *ngFor="let item of current.symbols[0].parts; let i=index">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="control" *ngIf="!isHandset">
+    <div class="button" (click)="prev($event)">←</div>
+    <div class="button" (click)="next($event)">→</div>
+</div>

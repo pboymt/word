@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #fff;
+}
+* {
+    margin: 0;
+    outline: none;
+    user-select: none;
+}
+
+.window.dark {
+    background-color: #000 !important;
+    color: #ccc;
+    .navbar {
+        background-color: #222 !important;
+        &.active {
+            background-color: #000 !important;
+        }
+        &.handset {
+            background-color: rgba($color: #000000, $alpha: 0) !important;
+            .tab {
+                border-color: #666 !important;
+                &.active {
+                    color: #000 !important;
+                }
+            }
+        }
+    }
+    .content {
+        background-color: #000 !important;
+
+        app-word {
+            .word {
+                .translation {
+                    .meaning {
+                        .part {
+                            background-color: #333 !important;
+                            color: #bbb !important;
+                        }
+                    }
+                    .parts {
+                        .part {
+                            background-color: #333 !important;
+                            &.selected {
+                                background-color: #666 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        app-config {
+            .configs {
+                .config {
+                    .value {
+                        input {
+                            color: #bbb !important;
+                            background-color: #000 !important;
+                        }
+                    }
+                    select.value {
+                        color: #bbb !important;
+                        background-color: #000 !important;
+                    }
+                    button {
+                        background-color: #333 !important;
+                        color: #bbb !important;
+                        &[type="submit"] {
+                            background-color: green !important;
+                            &:disabled {
+                                background-color: #333 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    app-add {
+        .add {
+            input {
+                background-color: #000 !important;
+                color: #bbb;
+                &:focus {
+                    background-color: #333 !important;
+                }
+                &.ng-invalid {
+                    border-color: rgba($color: red, $alpha: 0.5) !important;
+                }
+            }
+            button {
+                color: #bbb !important;
+                &:disabled {
+                    background-color: #666 !important;
+                }
+            }
+        }
+    }
+}
