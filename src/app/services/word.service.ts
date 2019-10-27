@@ -150,7 +150,7 @@ export class WordService {
   async add(word: string): Promise<AddResponse> {
     word = word.trim();
     if (!this.key) return { type: '你的Key呢？' };
-    if (/^[A-z]+$/.test(word)) {
+    if (/^[A-z]+([- ][A-z]+)*$/.test(word)) {
       const params = new HttpParams()
         .set('key', this.key);
       try {
