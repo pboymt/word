@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { WordService } from '../services/word.service';
+import { WordService, AddResponse } from '../services/word.service';
 
 @Component({
   selector: 'app-add',
@@ -10,11 +10,11 @@ import { WordService } from '../services/word.service';
 export class AddComponent implements OnInit {
 
   form = new FormGroup({
-    word: new FormControl('', [Validators.required, Validators.pattern(/^[A-z]+$/)])
+    word: new FormControl('', [Validators.required, Validators.pattern(/^[A-z]+([- ][A-z]+)*$/)])
   });
 
   uploading = false;
-  result = '';
+  result: AddResponse = { type: '' };
 
   constructor(
     private word: WordService

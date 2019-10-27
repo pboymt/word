@@ -37,6 +37,11 @@ interface ResponseWord {
 
 }
 
+export interface AddResponse {
+  type: string;
+  data?: Word;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -142,24 +147,25 @@ export class WordService {
     }
   }
 
-  async add(word: string) {
+  async add(word: string): Promise<AddResponse> {
     word = word.trim();
-    if (!this.key) return '你的Key呢？';
+    if (!this.key) return { type: '你的Key呢？' };
     if (/^[A-z]+$/.test(word)) {
       const params = new HttpParams()
         .set('key', this.key);
       try {
         const res = await this.http.post<ResponseWord>('/api/word', { word }, { params }).toPromise();
+
         if (res.code === 0) {
-          return '成功';
+          return { type: '成功', data: res.data };
         } else {
           throw res.message;
         }
       } catch (error) {
-        return `失败：${error}`;
+        return { type: `失败`, data: error };
       }
     } else {
-      return '你提交的什么玩意儿？';
+      return { type: '你提交的什么玩意儿？' };
     }
   }
 

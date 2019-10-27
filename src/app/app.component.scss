@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     // background-color: #fff;
     .navbar {
         flex: none;
@@ -46,5 +47,6 @@
         display: flex;
         flex: 1;
         background-color: #fff;
+        overflow: hidden;
     }
 }
